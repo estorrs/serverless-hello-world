@@ -1,0 +1,14 @@
+service: serverless-hello-world # our service name
+
+# here we include some of our provider details
+provider:
+  name: aws
+  stage: ${opt:stage, 'dev'} # stage is dev unless otherwise specified with --stage flag
+  runtime: python3.6
+  region: us-east-1
+
+
+# here we define what lambda functions we want
+functions:
+  hello-world: # our lambda function name
+    handler: handler.hello_world # the function we want invoked
